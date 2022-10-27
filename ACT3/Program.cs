@@ -90,7 +90,7 @@ namespace ACT3
             do
             {
                 //accept the number of comparison
-                Console.WriteLine(\"nEnter the element you want to search: ");
+                Console.WriteLine("\nEnter the element you want to search: ");
                 int item = Convert.ToInt32((Console.ReadLine()));
 
                 ctr = 0;
@@ -107,11 +107,65 @@ namespace ACT3
                 {
                     Console.WriteLine("\n" + item.ToString() + "no foound in the array");
                     Console.WriteLine("\nNumber of comnmparison: " + ctr);
-                    Console.WriteLine("\nContinue search (y/n): ");
-                    ch = char.Parse(Console.ReadLine().ToUpper());
-                } while ((ch == 'y')) ;
-            }
+                    
+                }
+                Console.WriteLine("\nContinue search (y/n): ");
+                ch = char.Parse(Console.ReadLine().ToUpper());
+            } while ((ch == 'y'));
 
         }
+        static void Main(string[] args)
+        {
+
+            Program myList = new Program();
+            int pilihanmenu;
+            char ch;
+            do
+            {
+                do
+                {
+                    Console.WriteLine("Menu Option");
+                    Console.WriteLine("================");
+                    Console.WriteLine("1, Linear search");
+                    Console.WriteLine("2. Binary Search");
+                    Console.WriteLine("3, exit");
+                    Console.WriteLine("Enter your  choice (1,2,3) : ");
+                    pilihanmenu = Convert.ToInt32(Console.ReadLine());
+                    switch (pilihanmenu)
+                    {
+                        case 1:
+                            Console.WriteLine("");
+                            Console.WriteLine(".................");
+                            Console.WriteLine("Linear Search");
+                            Console.WriteLine(".................");
+                            myList.input();
+                            myList.LinearSearch();
+                            break;
+                        case 2:
+                            Console.WriteLine("");
+                            Console.WriteLine(".................");
+                            Console.WriteLine("Binary Search");
+                            Console.WriteLine(".................");
+                            myList.input();
+                            myList.BinarySearch();
+                            break;
+                        case 3:
+                            Console.WriteLine("Exit");
+                            break;
+                    }
+                    Console.WriteLine("\nPilih menu lagi? (y/n): ");
+                    ch = char.Parse(Console.ReadLine().ToLower());
+                    Console.Clear();
+                } while (ch == 'y');
+
+                    //to exit from the console
+                    Console.WriteLine("\n\nPress return to exit.");
+                    Console.ReadLine();
+                } while (pilihanmenu != 3);
+            }
+        }
+
     }
-}
+    
+
+
