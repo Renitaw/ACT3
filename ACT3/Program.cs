@@ -74,12 +74,44 @@ namespace ACT3
                     Console.WriteLine("\n" + item.ToString() + "found at position" + (mid + 1).ToString());
                 else
                     Console.WriteLine("\n" + item.ToString() + "not found in the array\n");
-                Console.WriteLine("\nNumberr of comparasion : " ctr);
+                Console.WriteLine("\nNumberr of comparasion : " + ctr);
 
                 Console.WriteLine("\nContinue search (y/n): ");
-                ch = char.Parse(Console.ReadLine().ToUpper();
+                ch = char.Parse(Console.ReadLine().ToUpper());
 
             } while ((ch == 'y'));
+        }
+        
+        public void LinearSearch()
+        {
+            char ch;
+            //search for the number of comparison
+            int ctr;
+            do
+            {
+                //accept the number of comparison
+                Console.WriteLine(\"nEnter the element you want to search: ");
+                int item = Convert.ToInt32((Console.ReadLine()));
+
+                ctr = 0;
+                for (i = 0; i < n; i++)
+                {
+                    ctr++;
+                    if (arr[i] == item)
+                    {
+                        Console.WriteLine("\n" + item.ToString() + " found st position " + (i + 1).ToString());
+                        break;
+                    }
+                }
+                if (i == n)
+                {
+                    Console.WriteLine("\n" + item.ToString() + "no foound in the array");
+                    Console.WriteLine("\nNumber of comnmparison: " + ctr);
+                    Console.WriteLine("\nContinue search (y/n): ");
+                    ch = char.Parse(Console.ReadLine().ToUpper());
+                } while ((ch == 'y')) ;
+            }
+
         }
     }
 }
